@@ -3,28 +3,37 @@ const today = new Date();
 ---
 
 <footer>
-	<div>© {today.getFullYear()} Derammd Engineering.</div>
+	<div>© {today.getFullYear()} Derammd Engineering</div>
 	<div class="links">
 		<a href="https://github.com/sodrety" target="_blank" rel="noreferrer">GitHub</a>
 		<span>·</span>
 		<a href="https://www.linkedin.com/in/deramm/" target="_blank" rel="noreferrer">LinkedIn</a>
 	</div>
 </footer>
+
 <style>
 	footer {
-		padding: 2em 1em 4em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 2rem 1.25rem 3rem;
 		color: rgb(var(--gray));
-		text-align: center;
+		font-size: 0.9rem;
+		border-top: 1px solid rgb(var(--gray-light));
 	}
+
 	.links {
-		margin-top: 0.5rem;
 		display: flex;
+		align-items: center;
 		gap: 0.5rem;
-		justify-content: center;
+		margin-top: 0.4rem;
 	}
+
 	.links a {
 		text-decoration: none;
 		color: rgb(var(--gray));
+	}
+
+	.links a:hover {
+		color: rgb(var(--black));
 	}
 </style>

@@ -17,46 +17,65 @@ import HeaderLink from './HeaderLink.astro';
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: rgba(250, 250, 250, 0.88);
+		backdrop-filter: blur(8px);
+		border-bottom: 1px solid rgb(var(--gray-light));
 	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
 	nav {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0.8rem 1.25rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
+
+	h2 {
+		margin: 0;
+		font-size: 1rem;
 	}
-	nav a.active {
+
+	h2 a {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		color: rgb(var(--black));
 	}
+
+	.internal-links,
 	.social-links {
 		display: flex;
-		gap: 0.5rem;
-		font-size: 0.9rem;
+		align-items: center;
+		gap: 0.7rem;
 	}
-	@media (max-width: 720px) {
+
+	nav :global(a) {
+		padding: 0.35rem 0.2rem;
+		font-size: 0.92rem;
+		text-decoration: none;
+		color: rgb(var(--gray-dark));
+		border-bottom: 1px solid transparent;
+	}
+
+	nav :global(a.active),
+	nav :global(a:hover) {
+		border-bottom-color: rgb(var(--black));
+		color: rgb(var(--black));
+	}
+
+	@media (max-width: 780px) {
 		.social-links {
 			display: none;
+		}
+
+		nav {
+			padding: 0.75rem 1rem;
 		}
 	}
 </style>

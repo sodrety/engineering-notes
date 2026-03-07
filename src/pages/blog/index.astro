@@ -15,6 +15,31 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 1.5rem 0 0;
+				display: grid;
+				gap: 1rem;
+			}
+
+			li {
+				padding-bottom: 0.85rem;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+
+			li a {
+				font-weight: 700;
+				text-decoration: none;
+			}
+
+			li div {
+				font-size: 0.9rem;
+				color: rgb(var(--gray));
+				margin-top: 0.2rem;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
